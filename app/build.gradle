@@ -62,4 +62,7 @@ dependencies {
 
     //Coil
     implementation 'io.coil-kt:coil:1.2.2'
+
+    // android image picker
+    implementation 'com.github.esafirm:android-image-picker:3.0.0-beta1'
 }

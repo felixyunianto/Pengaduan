@@ -28,17 +28,18 @@ class InformasiActivityCreatePresenter(v : InformasiActivityContracts.InformasiA
         println("CONTENT " + complaint_content)
         println("IMAGE " + complaint_image)
         println("REQUEST " + request)
+
+
         request.enqueue(object : Callback<WrappedResponse<Aduan>>{
-            override fun onResponse(
-                call: Call<WrappedResponse<Aduan>>,
-                response: Response<WrappedResponse<Aduan>>
-            ) {
+            override fun onResponse(call: Call<WrappedResponse<Aduan>>, response: Response<WrappedResponse<Aduan>>) {
                 if(response.isSuccessful){
                     val body = response.body()
                     if(body != null){
                         view?.showToast(body.message)
                         view?.successPost()
                     }
+                }else{
+                    println("\n\nxxxx\n\n")
                 }
             }
 
